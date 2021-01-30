@@ -35,38 +35,11 @@ module.exports = function (grunt) {
         ],
       },
     },
-    // Duplicate files
-    copy: {
-      docs: {
-        files: {
-          "main/": ["docs/**"],
-        },
-      },
-      src: {
-        files: {
-          "main/": ["src/**"],
-        },
-      },
-      root: {
-        files: {
-          "main/": [
-            ".eslintrc.js",
-            ".gitignore",
-            ".prettierrc",
-            "Dockerfile",
-            "LICENSE",
-            "package.json",
-            "workbox-config.js",
-          ],
-        },
-      },
-    },
   });
   // Load all grunt tasks matching the ['grunt-*', '@*/grunt-*'] patterns
   require(`load-grunt-tasks`)(grunt, { scope: `devDependencies` });
   // Tasks
-  grunt.registerTask(`default`, [`eol`]);
+  grunt.registerTask(`default`, [`lf`]);
   grunt.registerTask(`img`, [`image`]);
   grunt.registerTask(`lf`, [`eol`]);
-  grunt.registerTask(`main`, [`copy`]);
 };
